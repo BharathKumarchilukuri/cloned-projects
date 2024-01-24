@@ -5,8 +5,16 @@ body{
 
 .left{
     width: 25vw;
+    padding: 5px;
 }
 
 .right{
     width: 75vw;
+    padding: 5px;
+}
+
+.logo{
+    width: 24px;
+    filter: invert(1);
+    padding: 0px 10px;
 }
