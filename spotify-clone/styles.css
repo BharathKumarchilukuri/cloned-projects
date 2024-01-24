@@ -1,0 +1,12 @@
+body{
+    background: rgb(38, 12, 12);
+    color: white;
+}
+
+.left{
+    width: 25vw;
+}
+
+.right{
+    width: 75vw;
+}
