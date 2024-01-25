@@ -1,11 +1,13 @@
 body{
     background: rgb(38, 12, 12);
     color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:lighter;
 }
 
 .left{
     width: 25vw;
-    padding: 5px;
+    padding: 8px;
 }
 
 .right{
@@ -16,5 +18,13 @@ body{
 .logo{
     width: 24px;
     filter: invert(1);
-    padding: 0px 10px;
+}
+
+.home{
+    padding: 10px;
+    margin: 0px 4px;
+}
+
+.ilogo{
+    margin-right: 16px;
 }
