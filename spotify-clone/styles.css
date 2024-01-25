@@ -1,30 +1,39 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+body {
     background: rgb(38, 12, 12);
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight:lighter;
+    font-weight: lighter;
 }
 
-.left{
-    width: 25vw;
+.left {
+    width: 24vw;
     padding: 8px;
 }
 
-.right{
-    width: 75vw;
+.right {
+    width: 76vw;
     padding: 5px;
 }
 
-.logo{
-    width: 24px;
+.logo {
+    width: 28px;
     filter: invert(1);
 }
 
-.home{
-    padding: 10px;
+.home {
     margin: 0px 4px;
+    padding: 16px;
 }
 
-.ilogo{
+.ilogo {
     margin-right: 16px;
 }
