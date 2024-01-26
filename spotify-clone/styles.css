@@ -16,12 +16,14 @@ body {
 
 .left {
     width: 24vw;
-    padding: 8px;
 }
 
 .right {
     width: 76vw;
-    padding: 5px;
+}
+
+.home, .library, .right-inner {
+    padding: 24px;
 }
 
 .logo {
@@ -29,11 +31,13 @@ body {
     filter: invert(1);
 }
 
-.home {
-    margin: 0px 4px;
-    padding: 20px;
-}
-
 .ilogo {
     margin-right: 20px;
+}
+
+.reg-logo{
+    width: 2px;
+    height: 2px;
+    position: relative;
+    top: 6px;
 }
