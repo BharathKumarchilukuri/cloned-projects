@@ -25,15 +25,15 @@ body {
 }
 
 .logo {
-    width: 28px;
+    width: 24px;
     filter: invert(1);
 }
 
 .home {
     margin: 0px 4px;
-    padding: 16px;
+    padding: 20px;
 }
 
 .ilogo {
-    margin-right: 16px;
+    margin-right: 20px;
 }
