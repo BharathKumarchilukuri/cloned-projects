@@ -8,7 +8,7 @@
 }
 
 body {
-    background: rgb(38, 12, 12);
+    background: black;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: lighter;
@@ -16,19 +16,27 @@ body {
 
 .left {
     width: 24vw;
+    margin: 8px;
 }
 
 .right {
     width: 76vw;
+    margin: 8px;
+    margin-left: 0px;
 }
 
 .home, .library, .right-inner {
-    padding: 24px;
+    padding: 20px 24px 10px 24px;
+}
+
+.home{
+    margin-bottom: 8px;
 }
 
 .logo {
     width: 24px;
     filter: invert(1);
+    opacity: 0.75;
 }
 
 .ilogo {
