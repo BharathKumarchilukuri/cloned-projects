@@ -63,7 +63,7 @@
     border-style: none;
 }
 
-.f-24{
+.f-16{
     font-size: 16px;
 }
 
@@ -72,11 +72,22 @@
     width: 105px;
     border-style: solid;
     padding: 8px;
-    border-width: 1px;
+    border-width: thin;
+    position: relative;
 }
 
 .button-white:hover{
-    
+    transform: scale(105%,105%);
+    border-width: medium;
+}
+
+.button-white img{
+    position: relative;
+    width: 16px;
+}
+
+.button-white span{
+    position: relative;
 }
 
 .border-20{
