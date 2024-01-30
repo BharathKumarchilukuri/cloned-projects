@@ -25,9 +25,19 @@ body {
     margin-left: 0px;
 }
 
-.home, .library, .right-inner {
-    padding: 20px 24px 10px 24px;
+.home {
+    padding: 20px 24px 8px 24px;
 }
+
+.library {
+    height: 100%;
+    padding: 16px 24px;
+    position: relative;
+}
+
+/* .right-inner {
+
+} */
 
 .home{
     margin-bottom: 8px;
@@ -48,4 +58,23 @@ body {
     height: 2px;
     position: relative;
     top: 6px;
+}
+
+.add-logo{
+    width: 16px;
+}
+
+.lib-body{
+    
+}
+
+.lib-footer{
+    position: absolute;
+    bottom: 0;
+    height: 40%;
+}
+
+.cookies{
+    color: grey;
+    font-size: 12px;
 }
