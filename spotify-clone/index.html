@@ -14,19 +14,19 @@
     <div class="container flex">
         <div class="left border">
             <div class="home bg-grey border">
-                <div class="top">
+                <div class="top cursor-pointer">
                     <img class="logo" src="needed/logo.png" alt="Spotify">
                     <span class="center">Spotify<img class="logo reg-logo" src="needed/registered.svg" alt="registered">
                     </span>
                 </div>
                 <ul style="padding-inline-start: 0px;">
-                    <li class="list flex">
+                    <li class="list flex cursor-pointer">
                         <a class="center a-link" href="#">
                             <img class="logo ilogo" src="needed/home.svg"alt="Home">
                             <span class="center f-24">Home</span>
                         </a>
                     </li>
-                    <li class="list flex">
+                    <li class="list flex cursor-pointer">
                         <a class="center a-link" href="#">
                             <img class="logo ilogo" src="needed/search.svg" alt="Search">
                             <span class="center f-24">Search</span>
@@ -39,7 +39,7 @@
                     <div class="flex space-between">
                         <button class="flex bg-none">
                             <img class="logo pright-12" src="needed/library.svg" alt="Your Library">
-                            <span class="center f-24">Your Library</span>
+                            <span class="center f-16">Your Library</span>
                         </button>
                     </div>
                     <div class="center add">
@@ -51,7 +51,7 @@
                 </div>
                 <div class="lib-footer flex-v space-between flex-start">
                     <a class="cookies a-link">Cookies</a>
-                    <button class="border-20 flex space-around bg-none center button-white">
+                    <button class="border-20 flex space-around bg-none center button-black">
                         <img src="needed/globe.svg" alt="globe" class="logo center">
                         <span class="f-16 center">English</span>
                     </button>
@@ -60,8 +60,27 @@
         </div>
 
         <div class="right border">
-            <div class="right-inner bg-grey border">
-                Something
+            <div class="nav right-inner bg-grey border flex space-between">
+                <div class="arrows">
+                    <button class="border-r50 m-6 bg-black btn-none">
+                        <img class="logo" src="needed/left-arrow.svg" alt="move left">
+                    </button>
+                    <button class="border-r50 m-6 bg-black btn-none">
+                        <img class="logo" src="needed/right-arrow.svg" alt="move-right">
+                    </button>
+                </div>
+                <div class="loginReg flex">
+                    <a class="bg-none center a-link signup" href="#">
+                        <span class="center f-24">Sign up</span>
+                    </a>
+
+                    <button class="login border-25 cursor-pointer button-white">
+                        Login
+                    </button>
+                </div>
+            </div>
+            <div class="content">
+                content
             </div>
         </div>
     </div>

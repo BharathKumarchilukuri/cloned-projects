@@ -17,12 +17,15 @@ body {
 .left {
     width: 24vw;
     margin: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
 .right {
     width: 76vw;
     margin: 8px;
     margin-left: 0px;
+    height: 100%;
 }
 
 .home {
@@ -30,9 +33,9 @@ body {
 }
 
 .library {
-    height: 100%;
     padding: 16px 24px;
     position: relative;
+    min-height: 69vh;
 }
 
 /* .right-inner {
@@ -71,10 +74,19 @@ body {
 .lib-footer{
     position: absolute;
     bottom: 0;
-    height: 40%;
+    height: 25%;
 }
 
 .cookies{
     color: grey;
     font-size: 12px;
+    font-weight: 400;
+}
+
+.right .nav{
+    padding: 12px 20px;
+}
+
+.loginReg{
+    width: 180px;
 }

@@ -25,6 +25,10 @@
     display: flex;
 }
 
+.cursor-pointer{
+    cursor:pointer;
+}
+
 .bg-grey{
     background-color: rgb(28, 20, 20);
 }
@@ -37,7 +41,7 @@
 .a-link{
     text-decoration: none;
     width: 100%;
-    color: rgb(162, 204, 204);
+    color: rgb(66, 103, 103);
 }
 
 .a-link:hover {
@@ -67,7 +71,7 @@
     font-size: 16px;
 }
 
-.button-white{
+.button-black{
     border: white;
     width: 105px;
     border-style: solid;
@@ -76,22 +80,26 @@
     position: relative;
 }
 
-.button-white:hover{
+.button-white:hover, .button-black:hover{
     transform: scale(105%,105%);
     border-width: medium;
 }
 
-.button-white img{
+.button-black img{
     position: relative;
     width: 16px;
 }
 
-.button-white span{
+.button-black span{
     position: relative;
 }
 
 .border-20{
     border-radius: 20px;
+}
+
+.border-r50{
+    border-radius: 50%;
 }
 
 .flex-v{
@@ -105,4 +113,32 @@
 
 .space-around{
     justify-content: space-around;
+}
+
+.m-6{
+    margin: 6px;
+}
+
+.bg-black{
+    background-color: black;
+}
+
+.btn-none{
+    width: 32px;
+    padding: 2px;
+    border: none;
+}
+
+.btn-none:hover{
+    cursor:not-allowed;
+}
+
+.button-white {
+    width: 180px;
+    padding: 8px;
+    border-style: none;
+}
+
+.border-25{
+    border-radius: 25px;
 }
