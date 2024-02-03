@@ -46,6 +46,7 @@
 }
 
 .a-link:hover {
+    cursor: pointer;
     opacity: 1;
 }
 
@@ -124,6 +125,10 @@
     background-color: black;
 }
 
+.bg-black2{
+    background-color: rgb(22, 21, 21);
+}
+
 .btn-none{
     width: 28px;
     padding: 2px;
@@ -146,4 +151,13 @@
 
 .center-v{
     margin: auto auto;
+}
+
+.playlist{
+    color: white;
+    text-decoration: none;
+}
+
+.text-decunderline:hover{
+    text-decoration: underline;
 }
