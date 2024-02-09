@@ -125,10 +125,64 @@ body {
 }
 
 .main-header{
-
+    margin: 0px 0px 16px;
 }
 
 .showall{
     padding: 4px;
     font-size: 14px;
+}
+
+.card{
+    background-color: rgb(36, 27, 27);
+    height: 250px;
+    width: 172px;
+    position: relative;
+    padding: 16px;
+    transition: 0.5s;
+}
+
+.card:hover{
+    cursor: pointer;
+    background-color: rgb(57, 42, 42);
+}
+
+.cover{
+    margin: 0;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 4px;
+}
+
+.card .logo-img{
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 16px;
+}
+
+.card-heading{
+    padding: 4px;
+}
+
+.card:hover .button{
+    top: 46%;
+    opacity: .85;
+}
+
+.button{
+    width: 50px;
+    height: 50px;
+    background: wheat;
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 65%;
+    opacity: 0;
+    transition: all .25s ease-out;
+    cursor: pointer;
+}
+
+.play{
+    width: 50px;
 }
