@@ -99,7 +99,7 @@ body {
 }
 
 .arrows{
-    padding: 0px 6px;
+    padding: 4px 6px 0px;
     width: 70px;
 }
 
@@ -118,7 +118,6 @@ body {
     height: 86vh;
     border-radius: 0 0 8px 8px;
     padding: 6px 22px;
-    background-color:cadetblue;
 }
 
 .login{
@@ -130,6 +129,6 @@ body {
 }
 
 .showall{
-    padding: 2px;
+    padding: 4px;
     font-size: 14px;
 }
