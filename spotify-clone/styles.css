@@ -115,9 +115,10 @@ body {
 }
 
 .content{
-    height: 86vh;
+    height: 85.5vh;
     border-radius: 0 0 8px 8px;
-    padding: 6px 22px;
+    padding: 6px 22px 12px;
+    position: relative;
 }
 
 .login{
@@ -125,12 +126,20 @@ body {
 }
 
 .main-header{
-    margin: 0px 0px 16px;
+    margin: 0px 0px 4px;
 }
 
 .showall{
     padding: 4px;
     font-size: 14px;
+}
+
+.card-container{
+    flex-wrap: wrap;
+    gap: 10px;
+    overflow-y: scroll;
+    max-height: 72vh;
+    padding: 0px 12px 12px;
 }
 
 .card{
@@ -167,7 +176,7 @@ body {
 
 .card:hover .button{
     top: 46%;
-    opacity: .85;
+    opacity: 1;
 }
 
 .button{
@@ -185,4 +194,27 @@ body {
 
 .play{
     width: 50px;
+    border-radius: 50%;
+}
+
+.playbar{
+    position: absolute;
+    bottom: 0;
+    background-color:aliceblue;
+    padding: 12px;
+    width: 94%;
+}
+
+.play-big{
+    width: 45px;
+}
+
+.play-small{
+    width: 25px;
+}
+
+
+.playbar-btns{
+    gap: 16px;
+    justify-content: center;
 }
