@@ -26,6 +26,7 @@ body {
     margin: 8px;
     margin-left: 0px;
     height: 100%;
+    position: relative;
 }
 
 .home {
@@ -134,7 +135,7 @@ body {
     font-size: 14px;
 }
 
-.card-container{
+#card-container{
     flex-wrap: wrap;
     gap: 10px;
     overflow-y: scroll;
@@ -182,27 +183,24 @@ body {
 .button{
     width: 50px;
     height: 50px;
-    background: wheat;
     border: none;
     position: absolute;
     top: 50%;
     left: 65%;
     opacity: 0;
+    color: transparent;
     transition: all .25s ease-out;
+    background: url("needed/play.svg");
+    background-size: 50px 50px;
     cursor: pointer;
-}
-
-.play{
-    width: 50px;
-    border-radius: 50%;
 }
 
 .playbar{
     position: absolute;
     bottom: 0;
-    background-color:aliceblue;
+    background-color: transparent;
     padding: 12px;
-    width: 94%;
+    width: 95%;
 }
 
 .play-big{
@@ -212,7 +210,6 @@ body {
 .play-small{
     width: 25px;
 }
-
 
 .playbar-btns{
     gap: 16px;
