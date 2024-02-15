@@ -3,10 +3,10 @@
 console.log("JS starts");
 
 let origin = window.location.origin;
-let port = + origin.substring(origin.lastIndexOf(':')+1);
-let neworigin = "http://127.0.0.1:"+ port +"/spotify-clone/";
+let port = + origin.substring(origin.lastIndexOf(':') + 1);
+let neworigin = "http://127.0.0.1:" + port + "/spotify-clone/";
 
-async function getSongs(){
+async function getSongs() {
     let songorigin = neworigin + "needed/songs/";
 
     let data = await fetch(songorigin);
@@ -15,7 +15,7 @@ async function getSongs(){
     let div = document.createElement("div");
     div.innerHTML = songsdata;
     let allsongs = div.getElementsByClassName("icon icon icon-mp3 icon-default");
-    
+
     let songs = [];
     for (let index = 0; index < allsongs.length; index++) {
         songs.push(allsongs[index].href);
@@ -24,22 +24,57 @@ async function getSongs(){
     return songs;
 }
 
-class Song{
+class Song {
     id;
     title = '';
     description = '';
     duration = 0;
     link = '';
     cover = '';
+
+    Song() {
+        id;
+        title = '';
+        description = '';
+        duration = 0;
+        link = '';
+        cover = '';
+    }
 }
 
+var playing = false;
+var currentSong = null;
+
 function playSong(song) {
-    song.play();
+    if (playing) {
+        currentSong.pause();
+        playing = false;
+    }
+    currentSong = song.id;
+    // currentSong.play();
+    playing = true;
+
+    displayOnPlaybar(song);
+}
+
+function clicked() {
+    console.log("bifbz");
+}
+
+function displayOnPlaybar(song){
+    let song_cover = document.getElementById("song-cover-img");
+    let song_title = document.getElementsByClassName("song-title")[0];
+    let song_desc = document.getElementsByClassName("song-desc")[0];
+
+    song_cover.src = song.cover;
+    song_cover.alt = song.id;
+    song_title.innerHTML = song.title;
+    song_desc.innerHTML = song.description;
 }
 
 async function main() {
     let songs = await getSongs();
-    
+
     let allsongs = new Array(Song);
 
     //add songs to card-container
@@ -66,19 +101,19 @@ async function main() {
         let cover = document.createElement("img");
         cover.classList.add("cover");
         cover.classList.add("border");
-        let findex = element.lastIndexOf("/")+1;
+        let findex = element.lastIndexOf("/") + 1;
         let sindex = element.lastIndexOf(".");
-        let song_index = element.substring( findex, sindex);
+        let song_index = element.substring(findex, sindex);
         cover.src = neworigin + "needed/covers/" + song_index + ".jpg";
         cover.alt = "cover";
 
         let card_heading = document.createElement("h4");
         card_heading.classList.add("card-heading");
-        card_heading.innerText = "Todays Top Hits";
+        card_heading.innerText = "Todays Top Hits_" + song_index;
 
         let card_body = document.createElement("h4");
         card_body.classList.add("card-body");
-        card_body.innerText = "Top of hottest 50";
+        card_body.innerText = "Top of hottest 50_" + song_index;
 
         new_song.id = new Audio(element);
         new_song.id.id = "song_" + song_index;
@@ -87,13 +122,13 @@ async function main() {
         new_song.description = card_body.innerText;
         new_song.link = element;
         new_song.cover = cover.src;
-        new_song.id.addEventListener("loadeddata" ,() => {
+        new_song.id.addEventListener("loadeddata", () => {
             new_song.duration = new_song.id.duration;
-            playbutton.addEventListener("click", () =>{
-                playSong(new_song.id);
+            playbutton.addEventListener("click", () => {
+                playSong(new_song);
             });
         });
-        
+
         allsongs.push(new_song);
 
         div.appendChild(playbutton);

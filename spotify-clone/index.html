@@ -94,25 +94,35 @@
                 <div id="card-container" class="flex space-between">
 
                 </div>
-            </div>
-            <div class="playbar space-between">
-                <div class="song-index">
-                    <div class="song-title">
-                        
+                <div class="playbar flex song-control">
+                    <div class="flex w-33 song-detail">
+                        <div class="song-cover">
+                            <img id="song-cover-img" src="" alt="">
+                        </div>
+                        <div class="song-data">
+                            <h4 class="song-title">
+                            </h4>
+                            <h6 class="song-desc">        
+                            </h6>
+                        </div>
                     </div>
-                    <div class="song-desc">
-
+                    <div class="w-33 t-div flex">
+                        <div class="playbar-btns flex">
+                            <img src="needed/previous.svg" alt="previous" class=" logo cursor-pointer play-small" onclick="clicked()">
+                            <img class="logo play-big cursor-pointer" src="needed/play-big.svg" alt="play" onclick="clicked()">
+                            <img src="needed/next.svg" alt="next" class="logo cursor-pointer play-small" onclick="clicked()">
+                        </div>
                     </div>
-                </div>
-                <div class="playbar-btns flex center">
-                    <img src="needed/previous.svg" alt="previous" class=" logo cursor-pointer play-small">
-                    <img class="logo play-big cursor-pointer" src="needed/play-big.svg" alt="play">
-                    <img src="needed/next.svg" alt="next" class="logo cursor-pointer play-small">
-                </div>
-                <div class="ctrl-btns flex center">
-                    <img src="" alt="" class="repeat">
+                    <div class="w-33 t-div flex">
+                        <div class="ctrl-btns flex">
+                            <img class="logo" src="needed/add.svg" alt="" class="repeat">
+                            <img class="logo" src="needed/add.svg" alt="" class="repeat">
+                            <img class="logo" src="needed/add.svg" alt="" class="repeat">
+                        </div>
+                    </div>        
                 </div>
             </div>
+            
         </div>
     </div>
     <script src="script.js"></script>

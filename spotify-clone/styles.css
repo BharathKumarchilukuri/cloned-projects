@@ -137,7 +137,7 @@ body {
 
 #card-container{
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 0.75vw;
     overflow-y: scroll;
     max-height: 72vh;
     padding: 0px 12px 12px;
@@ -198,9 +198,10 @@ body {
 .playbar{
     position: absolute;
     bottom: 0;
-    background-color: transparent;
-    padding: 12px;
+    background-color: inherit;
+    padding: 8px;
     width: 95%;
+    height: 8vh;
 }
 
 .play-big{
@@ -214,4 +215,24 @@ body {
 .playbar-btns{
     gap: 16px;
     justify-content: center;
+}
+
+.song-detail{
+    gap: 1vw;
+    height: 100%;
+}
+
+#song-cover-img{
+    width: 60px;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ctrl-btns{
+    justify-content: center;
+    gap: 12px;
+}
+
+.song-data{
+    margin: auto 0;
 }
