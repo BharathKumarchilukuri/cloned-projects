@@ -205,15 +205,26 @@ body {
 }
 
 .play-big{
-    width: 45px;
+    width: 30px;
+    transition: all 0.25s ease-out;
+}
+
+.play-big:hover{
+    width: 35px;
 }
 
 .play-small{
+    width: 20px;
+    transition: all 0.25s ease-out;
+}
+
+.play-small:hover{
     width: 25px;
 }
 
 .playbar-btns{
-    gap: 16px;
+    width: 100%;
+    gap: 20px;
     justify-content: center;
 }
 

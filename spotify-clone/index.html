@@ -108,9 +108,9 @@
                     </div>
                     <div class="w-33 t-div flex">
                         <div class="playbar-btns flex">
-                            <img src="needed/previous.svg" alt="previous" class=" logo cursor-pointer play-small" onclick="clicked()">
-                            <img class="logo play-big cursor-pointer" src="needed/play-big.svg" alt="play" onclick="clicked()">
-                            <img src="needed/next.svg" alt="next" class="logo cursor-pointer play-small" onclick="clicked()">
+                            <img src="needed/previous.svg" alt="previous" class=" logo cursor-pointer play-small" onclick='clicked("previous_song")'>
+                            <img class="logo play-big cursor-pointer" src="needed/play-big.svg" alt="play" onclick='clicked("play_song")'>
+                            <img src="needed/next.svg" alt="next" class="logo cursor-pointer play-small" onclick='clicked("next_song")'>
                         </div>
                     </div>
                     <div class="w-33 t-div flex">
@@ -118,6 +118,11 @@
                             <img class="logo" src="needed/add.svg" alt="" class="repeat">
                             <img class="logo" src="needed/add.svg" alt="" class="repeat">
                             <img class="logo" src="needed/add.svg" alt="" class="repeat">
+                            <img class="logo" src="needed/add.svg" alt="" class="repeat">
+                            <span class="center-v">
+                                <!-- <img id="volume_img" class="logo" src="needed/volume/half.svg" alt="volume"> -->
+                                <input type="range" name="volume" onchange="submit_volume(this.value)">
+                            </span>
                         </div>
                     </div>        
                 </div>

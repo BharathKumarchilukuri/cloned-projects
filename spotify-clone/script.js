@@ -57,8 +57,8 @@ function playSong(song) {
     displayOnPlaybar(song);
 }
 
-function clicked() {
-    console.log("bifbz");
+function clicked(command) {
+    console.log(command);
 }
 
 function displayOnPlaybar(song){
