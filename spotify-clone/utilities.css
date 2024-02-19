@@ -187,3 +187,35 @@
 ::-webkit-scrollbar-track {
   background-color: black;
 }
+
+.lib-song{
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 8px;
+  border: 1px solid white;
+}
+
+.lib-song:hover{
+  background-color: rgb(57, 42, 42);
+}
+
+.lib-song-cover{
+  width: 24px;
+  padding: 8px;
+  border-radius: 3px;
+}
+
+.lib-song-details{
+  gap: 12px;
+}
+
+.lib-song-play{
+  background: none;
+  color: white;
+  gap: 6px;
+  padding: 4px;
+  border: none;
+  cursor: pointer;
+}

@@ -14,11 +14,14 @@ async function getSongs() {
 
     let div = document.createElement("div");
     div.innerHTML = songsdata;
-    let allsongs = div.getElementsByClassName("icon icon icon-mp3 icon-default");
+    let all_songs = div.getElementsByClassName("icon icon icon-mp3 icon-default");
+
+    // let all_songs = await fetch(neworigin + "needed/sample-songs/data.json").then(response => response.json());
+    // console.log(all_songs);
 
     let songs = [];
-    for (let index = 0; index < allsongs.length; index++) {
-        songs.push(allsongs[index].href);
+    for (let index = 0; index < all_songs.length; index++) {
+        songs.push(all_songs[index].href);
     }
 
     return songs;
@@ -28,17 +31,21 @@ class Song {
     id;
     title = '';
     description = '';
+    artistName = '';
     duration = 0;
     link = '';
     cover = '';
+    isPlaying = false;
 
-    Song() {
-        id;
-        title = '';
-        description = '';
-        duration = 0;
-        link = '';
-        cover = '';
+    constructor() {
+        this.id;
+        this.title = '';
+        this.description = '';
+        this.artistName = "None";
+        this.duration = 0;
+        this.link = '';
+        this.cover = '';
+        this.isPlaying= false;
     }
 }
 
@@ -48,17 +55,40 @@ var currentSong = null;
 function playSong(song) {
     if (playing) {
         currentSong.pause();
+        currentSong.isPlaying = false;
         playing = false;
     }
     currentSong = song.id;
-    // currentSong.play();
-    playing = true;
+    currentSong.play();
+    song.isPlaying = true;
+    play_pause(currentSong);
 
     displayOnPlaybar(song);
 }
 
+function play_pause(){
+    let play = document.getElementById("play_song");
+
+    if(playing){
+        currentSong.pause();
+        play.src = "needed/play-big.svg";
+    } else {
+        currentSong.play();
+        play.src = "needed/pause.svg";
+    }
+
+    playing = !(playing);
+}
+
 function clicked(command) {
-    console.log(command);
+    if (command == "play_song") {
+        if(currentSong == null) {
+            let song = all_Songs[Math.round(Math.random()*10)];
+            displayOnPlaybar(song);
+            currentSong = song.id;
+        }
+        play_pause();
+    }
 }
 
 function displayOnPlaybar(song){
@@ -72,12 +102,9 @@ function displayOnPlaybar(song){
     song_desc.innerHTML = song.description;
 }
 
-async function main() {
-    let songs = await getSongs();
+function addSongs_CardContainer(songs) {
+    let all_songs = new Array();
 
-    let allsongs = new Array(Song);
-
-    //add songs to card-container
     let card_container = document.getElementById("card-container");
     for (let index = 0; index < songs.length; index++) {
         let element = songs[index];
@@ -104,6 +131,7 @@ async function main() {
         let findex = element.lastIndexOf("/") + 1;
         let sindex = element.lastIndexOf(".");
         let song_index = element.substring(findex, sindex);
+        song_index =song_index.replaceAll("%20", " ");
         cover.src = neworigin + "needed/covers/" + song_index + ".jpg";
         cover.alt = "cover";
 
@@ -129,7 +157,7 @@ async function main() {
             });
         });
 
-        allsongs.push(new_song);
+        all_songs.push(new_song);
 
         div.appendChild(playbutton);
         div.appendChild(logo_img);
@@ -139,6 +167,78 @@ async function main() {
 
         card_container.appendChild(div);
     }
+
+    return all_songs;
+}
+
+function addSongs_Library(songs){
+
+    let songUL = document.getElementById("song-list");
+    for (let index = 0; index < songs.length; index++) {
+        let song = songs[index];
+        let li = document.createElement("li");
+        li.className = "flex space-between lib-song";
+
+        let ddiv = document.createElement("div");
+        ddiv.className = "flex space-between lib-song-details";
+
+        let img = document.createElement("img");
+        img.className = "logo lib-song-cover";
+        img.src = "needed/music-note.svg";
+
+        let div = document.createElement("div");
+        div.className = "flex-v center";
+
+        let h4 = document.createElement("h4");
+        h4.innerText = song.title;
+
+        let h6 = document.createElement("h6");
+        h6.style.color = "rgb(160, 158, 158)";
+        h6.innerHTML = song.artistName;        
+
+        div.appendChild(h4);
+        div.appendChild(h6);
+
+        ddiv.appendChild(img);
+        ddiv.appendChild(div);
+
+        let div2 = document.createElement("div");
+        div2.className = "center";
+
+        let button = document.createElement("button");
+        button.className = "flex lib-song-play";
+
+        let span = document.createElement("span");
+        span.className = "center";
+        span.innerText = "Play"
+        let img2 = document.createElement("img");
+        img2.className = "logo";
+        img2.src = "needed/play-lib.svg";
+
+        button.appendChild(span);
+        button.appendChild(img2);
+
+        button.addEventListener("click", () => {
+            playSong(song);
+        });
+
+        div2.appendChild(button);
+
+        li.appendChild(ddiv);
+        li.appendChild(div2);
+
+        songUL.appendChild(li);
+    }
+}
+
+var all_Songs = new Array(Song);
+async function main() {
+    let songs = await getSongs();
+
+    //add songs to card-container
+    all_Songs = addSongs_CardContainer(songs);
+    // add songs to library
+    addSongs_Library(all_Songs);
 }
 
 main();

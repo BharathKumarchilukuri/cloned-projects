@@ -49,7 +49,9 @@
                     </div>
                 </div>
                 <div class="lib-body">
+                    <ul id="song-list">
 
+                    </ul>
                 </div>
                 <div class="lib-footer flex-v space-between flex-start">
                     <a class="cookies a-link">Cookies</a>
@@ -108,9 +110,9 @@
                     </div>
                     <div class="w-33 t-div flex">
                         <div class="playbar-btns flex">
-                            <img src="needed/previous.svg" alt="previous" class=" logo cursor-pointer play-small" onclick='clicked("previous_song")'>
-                            <img class="logo play-big cursor-pointer" src="needed/play-big.svg" alt="play" onclick='clicked("play_song")'>
-                            <img src="needed/next.svg" alt="next" class="logo cursor-pointer play-small" onclick='clicked("next_song")'>
+                            <img id="previous_song" src="needed/previous.svg" alt="previous" class=" logo cursor-pointer play-small" onclick='clicked("previous_song")'>
+                            <img id="play_song" class="logo play-big cursor-pointer" src="needed/play-big.svg" alt="play" onclick='clicked("play_song")'>
+                            <img id="next_song" src="needed/next.svg" alt="next" class="logo cursor-pointer play-small" onclick='clicked("next_song")'>
                         </div>
                     </div>
                     <div class="w-33 t-div flex">
