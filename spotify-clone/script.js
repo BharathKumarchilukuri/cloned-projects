@@ -35,7 +35,6 @@ class Song {
     duration = 0;
     link = '';
     cover = '';
-    isPlaying = false;
 
     constructor() {
         this.id;
@@ -45,35 +44,49 @@ class Song {
         this.duration = 0;
         this.link = '';
         this.cover = '';
-        this.isPlaying= false;
     }
 }
 
 var playing = false;
 var currentSong = null;
+var songInterval = null;
+var currentTime = 0;
+var SongTime = 0;
+
+function displayCircle() {
+    let circle_left = document.getElementById("circle");
+    circle_left.style.left = `${Math.round((Math.round(currentTime * 100) / SongTime) * 100) / 100}%`;
+    console.log(`${Math.round((Math.round(currentTime * 100) / SongTime) * 100) / 100}%`);
+    currentTime += 0.5;
+}
 
 function playSong(song) {
+    if(song.id == currentSong) return;
     if (playing) {
-        currentSong.pause();
-        currentSong.isPlaying = false;
-        playing = false;
+        play_pause();
+        currentTime = 0;
     }
+    
     currentSong = song.id;
-    currentSong.play();
-    song.isPlaying = true;
-    play_pause(currentSong);
-
+    playing = false;
+    currentTime = 0;
+    play_pause();
     displayOnPlaybar(song);
 }
 
-function play_pause(){
+function play_pause() {
     let play = document.getElementById("play_song");
 
-    if(playing){
+    if (playing) {
         currentSong.pause();
+        clearInterval(songInterval);
+        console.log("Interval cleared");
         play.src = "needed/play-big.svg";
     } else {
         currentSong.play();
+        currentTime = currentTime > 0 ? currentTime : 0;
+        SongTime = Math.round(currentSong.duration);
+        songInterval = setInterval(displayCircle, 1000);
         play.src = "needed/pause.svg";
     }
 
@@ -82,8 +95,8 @@ function play_pause(){
 
 function clicked(command) {
     if (command == "play_song") {
-        if(currentSong == null) {
-            let song = all_Songs[Math.round(Math.random()*10)];
+        if (currentSong == null) {
+            let song = all_Songs[Math.round(Math.random() * 10)];
             displayOnPlaybar(song);
             currentSong = song.id;
         }
@@ -91,7 +104,7 @@ function clicked(command) {
     }
 }
 
-function displayOnPlaybar(song){
+function displayOnPlaybar(song) {
     let song_cover = document.getElementById("song-cover-img");
     let song_title = document.getElementsByClassName("song-title")[0];
     let song_desc = document.getElementsByClassName("song-desc")[0];
@@ -131,7 +144,7 @@ function addSongs_CardContainer(songs) {
         let findex = element.lastIndexOf("/") + 1;
         let sindex = element.lastIndexOf(".");
         let song_index = element.substring(findex, sindex);
-        song_index =song_index.replaceAll("%20", " ");
+        song_index = song_index.replaceAll("%20", " ");
         cover.src = neworigin + "needed/covers/" + song_index + ".jpg";
         cover.alt = "cover";
 
@@ -171,7 +184,7 @@ function addSongs_CardContainer(songs) {
     return all_songs;
 }
 
-function addSongs_Library(songs){
+function addSongs_Library(songs) {
 
     let songUL = document.getElementById("song-list");
     for (let index = 0; index < songs.length; index++) {
@@ -194,7 +207,7 @@ function addSongs_Library(songs){
 
         let h6 = document.createElement("h6");
         h6.style.color = "rgb(160, 158, 158)";
-        h6.innerHTML = song.artistName;        
+        h6.innerHTML = song.artistName;
 
         div.appendChild(h4);
         div.appendChild(h6);

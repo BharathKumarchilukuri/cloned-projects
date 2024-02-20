@@ -93,40 +93,47 @@
                     </span>
                 </header>
                 
-                <div id="card-container" class="flex space-between">
+                <div id="card-container" class="flex">
 
                 </div>
-                <div class="playbar flex song-control">
-                    <div class="flex w-33 song-detail">
-                        <div class="song-cover">
-                            <img id="song-cover-img" src="" alt="">
+                <div class="playbar song-control">
+                    <div class="flex" style="height: 90%;">
+                        <div class="flex w-33 song-detail">
+                            <div class="song-cover">
+                                <img id="song-cover-img" src="" alt="">
+                            </div>
+                            <div class="song-data">
+                                <h4 class="song-title">
+                                </h4>
+                                <h6 class="song-desc">        
+                                </h6>
+                            </div>
                         </div>
-                        <div class="song-data">
-                            <h4 class="song-title">
-                            </h4>
-                            <h6 class="song-desc">        
-                            </h6>
+                        <div class="w-33 t-div flex">
+                            <div class="playbar-btns flex">
+                                <img id="previous_song" src="needed/previous.svg" alt="previous" class=" logo cursor-pointer play-small" onclick='clicked("previous_song")'>
+                                <img id="play_song" class="logo play-big cursor-pointer" src="needed/play-big.svg" alt="play" onclick='clicked("play_song")'>
+                                <img id="next_song" src="needed/next.svg" alt="next" class="logo cursor-pointer play-small" onclick='clicked("next_song")'>
+                            </div>
+                        </div>
+                        <div class="w-33 t-div flex">
+                            <div class="ctrl-btns flex">
+                                <img class="logo" src="needed/add.svg" alt="" class="repeat">
+                                <img class="logo" src="needed/add.svg" alt="" class="repeat">
+                                <img class="logo" src="needed/add.svg" alt="" class="repeat">
+                                <img class="logo" src="needed/add.svg" alt="" class="repeat">
+                                <span class="center-v">
+                                    <!-- <img id="volume_img" class="logo" src="needed/volume/half.svg" alt="volume"> -->
+                                    <input type="range" name="volume" onchange="submit_volume(this.value)">
+                                </span>
+                            </div>
                         </div>
                     </div>
-                    <div class="w-33 t-div flex">
-                        <div class="playbar-btns flex">
-                            <img id="previous_song" src="needed/previous.svg" alt="previous" class=" logo cursor-pointer play-small" onclick='clicked("previous_song")'>
-                            <img id="play_song" class="logo play-big cursor-pointer" src="needed/play-big.svg" alt="play" onclick='clicked("play_song")'>
-                            <img id="next_song" src="needed/next.svg" alt="next" class="logo cursor-pointer play-small" onclick='clicked("next_song")'>
+                    <div id="seekbar">
+                        <div id="circle">
+
                         </div>
-                    </div>
-                    <div class="w-33 t-div flex">
-                        <div class="ctrl-btns flex">
-                            <img class="logo" src="needed/add.svg" alt="" class="repeat">
-                            <img class="logo" src="needed/add.svg" alt="" class="repeat">
-                            <img class="logo" src="needed/add.svg" alt="" class="repeat">
-                            <img class="logo" src="needed/add.svg" alt="" class="repeat">
-                            <span class="center-v">
-                                <!-- <img id="volume_img" class="logo" src="needed/volume/half.svg" alt="volume"> -->
-                                <input type="range" name="volume" onchange="submit_volume(this.value)">
-                            </span>
-                        </div>
-                    </div>        
+                    </div>  
                 </div>
             </div>
             
