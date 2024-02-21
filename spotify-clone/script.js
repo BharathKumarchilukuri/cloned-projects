@@ -1,5 +1,3 @@
-
-
 console.log("JS starts");
 
 let origin = window.location.origin;
@@ -47,14 +45,27 @@ class Song {
     }
 }
 
+//@media (max-width: 1200px)
+
+function displayLeft(command){
+    let left = document.getElementsByClassName("left")[0];
+    if (command == "show") {
+        left.style.left = "0px";
+    } else if (command == "close") {
+        left.style.left = "-350px";
+    }
+
+
+}
+
 var playing = false;
 var currentSong = null;
 var songInterval = null;
 var currentTime = 0;
 var SongTime = 0;
 
+let circle_left = document.getElementById("circle");
 function displayCircle() {
-    let circle_left = document.getElementById("circle");
     circle_left.style.left = `${Math.round((Math.round(currentTime * 100) / SongTime) * 100) / 100}%`;
     console.log(`${Math.round((Math.round(currentTime * 100) / SongTime) * 100) / 100}%`);
     currentTime += 0.5;

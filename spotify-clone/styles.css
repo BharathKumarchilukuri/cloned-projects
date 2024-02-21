@@ -1,248 +1,254 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family:'Roboto', sans-serif;
-    font-weight: 700;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
 }
 
 body {
-    background: black;
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: lighter;
+  background: black;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: lighter;
 }
 
 .left {
-    width: 24vw;
-    margin: 8px;
-    display: flex;
-    flex-direction: column;
+  width: 24vw;
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
 }
 
 .right {
-    width: 76vw;
-    margin: 8px;
-    margin-left: 0px;
-    height: 100%;
-    position: relative;
+  width: 76vw;
+  margin: 8px;
+  margin-left: 0px;
+  height: 100%;
+  position: relative;
 }
 
 .home {
-    padding: 20px 24px 8px 24px;
+  padding: 20px 24px 8px 24px;
 }
 
 .library {
-    position: relative;
-    min-height: 73.5vh;
+  position: relative;
+  min-height: 73.5vh;
 }
 
 /* .right-inner {
 
 } */
 
-.home{
-    margin-bottom: 8px;
+.home {
+  margin-bottom: 8px;
 }
 
-.logo, .logo-5 {
-    width: 24px;
-    filter: invert(1);
-    opacity: 0.75;
+#open_bar,
+#close_bar {
+  display: none;
 }
 
-.logo:hover{
-    cursor: pointer;
-    opacity: 1;
+.logo,
+.logo-5 {
+  width: 24px;
+  filter: invert(1);
+  opacity: 0.75;
 }
 
-.logo-5{
-    filter: invert(0.7);
+.logo:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.logo-5 {
+  filter: invert(0.7);
 }
 
 .ilogo {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
-.reg-logo{
-    width: 2px;
-    height: 2px;
-    position: relative;
-    top: 6px;
+.reg-logo {
+  width: 2px;
+  height: 2px;
+  position: relative;
+  top: 6px;
 }
 
-.add-logo{
-    width: 16px;
+.add-logo {
+  width: 16px;
 }
 
-.lib-header{
-    padding: 16px 24px;
+.lib-header {
+  padding: 16px 24px;
 }
 
-.lib-body{
-    height:300px;
-    background-color: transparent;
-    margin: 1px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    z-index: 1;
+.lib-body {
+  height: 300px;
+  background-color: transparent;
+  margin: 1px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 1;
 }
 
-.lib-body::-webkit-scrollbar{
-    width: 12px;
-    height: 28px;
-    position: absolute;
-    z-index: 2;
+.lib-body::-webkit-scrollbar {
+  width: 12px;
+  height: 28px;
+  position: absolute;
+  z-index: 2;
 }
 
-.lib-body::-webkit-scrollbar-track{
-    background: transparent;
+.lib-body::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-.lib-body::-webkit-scrollbar-thumb{
-    border-radius: 0;
-    background: rgba(239, 236, 236, 0.3);
+.lib-body::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background: rgba(239, 236, 236, 0.3);
 }
 
-.lib-body:hover::-webkit-scrollbar{
-    display: block;
+.lib-body:hover::-webkit-scrollbar {
+  display: block;
 }
 
-#song-list{
-    list-style-type: none;
+#song-list {
+  list-style-type: none;
 }
 
-.lib-footer{
-    position: absolute;
-    padding: 8px 24px;
-    bottom: 0;
-    width: 90%;
-    height: 25%;
-    background-color: transparent;
+.lib-footer {
+  position: absolute;
+  padding: 8px 24px;
+  bottom: 0;
+  width: 90%;
+  height: 25%;
+  background-color: transparent;
 }
 
-.cookies{
-    color: grey;
-    font-size: 12px;
-    font-weight: 400;
+.cookies {
+  color: grey;
+  font-size: 12px;
+  font-weight: 400;
 }
 
-.right .nav{
-    height: 8vh;
-    padding: 4px 20px;
-    border-radius: 8px 8px 0 0;
+.right .nav {
+  height: 8vh;
+  padding: 4px 20px;
+  border-radius: 8px 8px 0 0;
 }
 
-.arrows{
-    padding: 4px 6px 0px;
-    width: 70px;
+.arrows {
+  padding: 4px 6px 0px;
+  width: 70px;
 }
 
-.loginReg{
-    width: 228px;
-    height: 100%;
-    padding: 0px 12px;
+.loginReg {
+  width: 228px;
+  height: 100%;
+  padding: 0px 12px;
 }
 
-.signup{
-    padding: 4px;
-    margin: 0;
+.signup {
+  padding: 4px;
+  margin: 0;
 }
 
-.content{
-    height: 85.5vh;
-    border-radius: 0 0 8px 8px;
-    padding: 6px 22px 12px;
-    position: relative;
+.content {
+  height: 85.5vh;
+  border-radius: 0 0 8px 8px;
+  padding: 6px 22px 12px;
+  position: relative;
 }
 
-.login{
-    height: 85%;
+.login {
+  height: 85%;
 }
 
-.main-header{
-    margin: 0px 0px 4px;
+.main-header {
+  margin: 0px 0px 4px;
 }
 
-.showall{
-    padding: 4px;
-    font-size: 14px;
+.showall {
+  padding: 4px;
+  font-size: 14px;
 }
 
-#card-container{
-    flex-wrap: wrap;
-    gap: 0.75vw;
-    overflow-y: scroll;
-    max-height: 70vh;
-    padding: 0px 12px 12px;
+#card-container {
+  flex-wrap: wrap;
+  gap: 0.75vw;
+  overflow-y: scroll;
+  max-height: 70vh;
+  padding: 0px 12px 12px;
 }
 
-.card{
-    background-color: rgb(36, 27, 27);
-    height: 250px;
-    width: 172px;
-    position: relative;
-    padding: 16px;
-    transition: 0.5s;
+.card {
+  background-color: rgb(36, 27, 27);
+  height: 250px;
+  width: 172px;
+  position: relative;
+  padding: 16px;
+  transition: 0.5s;
 }
 
-.card:hover{
-    cursor: pointer;
-    background-color: rgb(57, 42, 42);
+.card:hover {
+  cursor: pointer;
+  background-color: rgb(57, 42, 42);
 }
 
-.cover{
-    margin: 0;
-    width: 100%;
-    object-fit: contain;
-    margin-bottom: 4px;
+.cover {
+  margin: 0;
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 4px;
 }
 
-.card .logo-img{
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    width: 16px;
+.card .logo-img {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 16px;
 }
 
-.card-heading{
-    padding: 4px;
+.card-heading {
+  padding: 4px;
 }
 
-.card:hover .button{
-    top: 46%;
-    opacity: 1;
+.card:hover .button {
+  top: 46%;
+  opacity: 1;
 }
 
-.button{
-    width: 50px;
-    height: 50px;
-    border: none;
-    position: absolute;
-    top: 50%;
-    left: 65%;
-    opacity: 0;
-    color: transparent;
-    transition: all .25s ease-out;
-    background: url("needed/play.svg");
-    background-size: 50px 50px;
-    cursor: pointer;
+.button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  opacity: 0;
+  color: transparent;
+  transition: all 0.25s ease-out;
+  background: url("needed/play.svg");
+  background-size: 50px 50px;
+  cursor: pointer;
 }
 
-.playbar{
-    position: absolute;
-    bottom: 0px;
-    background-color: inherit;
-    padding: 8px;
-    width: 72vw;
-    height: 8vh;
+.playbar {
+  position: absolute;
+  bottom: 0px;
+  background-color: inherit;
+  padding: 8px;
+  width: 72vw;
+  height: 8vh;
 }
 
-.play-big{
-    width: 30px;
-    transition: all 0.25s ease-out;
-    z-index: 1;
+.play-big {
+  width: 30px;
+  transition: all 0.25s ease-out;
+  z-index: 1;
 }
 
 /* .play-big:hover{
@@ -250,10 +256,10 @@ body {
     width: 35px;
 } */
 
-.play-small{
-    width: 20px;
-    transition: all 0.25s ease-out;
-    z-index: 1;
+.play-small {
+  width: 20px;
+  transition: all 0.25s ease-out;
+  z-index: 1;
 }
 
 /* .play-small:hover{
@@ -261,48 +267,102 @@ body {
     width: 25px;
 } */
 
-.playbar-btns{
-    width: 100%;
-    gap: 20px;
-    justify-content: center;
+.playbar-btns {
+  width: 100%;
+  gap: 20px;
+  justify-content: center;
 }
 
-.song-detail{
-    gap: 1vw;
-    height: 100%;
+.song-detail {
+  gap: 1vw;
+  height: 100%;
 }
 
-#song-cover-img{
-    width: 54px;
-    height: 100%;
-    object-fit: contain;
+#song-cover-img {
+  width: 54px;
+  height: 100%;
+  object-fit: contain;
 }
 
-.ctrl-btns{
-    justify-content: center;
-    gap: 12px;
+.ctrl-btns {
+  justify-content: center;
+  gap: 12px;
 }
 
-.song-data{
-    margin: auto 0;
+.song-data {
+  margin: auto 0;
 }
 
-#seekbar{
-    width: 97%;
-    height: 0;
+#seekbar {
+  width: 97%;
+  height: 0;
+  position: absolute;
+  bottom: 4px;
+  border: 1px solid whitesmoke;
+  border-radius: 2px;
+}
+
+#circle {
+  width: 10px;
+  height: 10px;
+  background-color: aqua;
+  position: relative;
+  left: -2px;
+  bottom: 5px;
+  border-radius: 50%;
+  transition: left 0.5s ease-in-out;
+}
+
+@media (max-width: 1200px) {
+  .left {
     position: absolute;
-    bottom: 4px;
-    border: 1px solid whitesmoke;
-    border-radius: 2px;
-}
+    width: 350px;
+    left: -350px;
+    transition: all 2s ease-in-out;
+    z-index: 4;
+  }
 
-#circle{
-    width: 10px;
-    height: 10px;
-    background-color: aqua;
+  .right {
+    position: absolute;
+    width: 100%;
+  }
+
+  .home{
     position: relative;
-    left: -2px;
-    bottom: 5px;
+  }
+
+  .logo {
+    width: 12px;
+    filter: invert(1);
+    opacity: 0.75;
+  }
+
+  #open_bar .logo, #close_bar .logo {
+    width: 100%;
+  }
+
+  #open_bar {
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 4px;
+    background-color: transparent;
+  }
+
+  #close_bar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 30px;
+    height: 30px;
+    background-color: red;
     border-radius: 50%;
-    transition: left 0.5s ease-in-out;
+  }
+
+  .reg-logo{
+    width: 4px;
+    height: 4px;
+  }
 }

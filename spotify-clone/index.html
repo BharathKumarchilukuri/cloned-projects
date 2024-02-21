@@ -12,11 +12,15 @@
 
 <body>
     <div class="container flex">
+        
         <div class="left border">
             <div class="home bg-grey border">
+                <div id="close_bar">
+                    <img class="logo" src="needed/close.svg" alt="close menu" onclick='displayLeft("close")'>
+                </div>
                 <div class="top cursor-pointer">
                     <img class="logo" src="needed/logo.png" alt="Spotify">
-                    <span class="center">Spotify<img class="logo reg-logo" src="needed/registered.svg" alt="registered">
+                    <span class="center">Spotify<img class="reg-logo logo" src="needed/registered.svg" alt="registered">
                     </span>
                 </div>
                 <ul style="padding-inline-start: 0px;">
@@ -64,14 +68,19 @@
         </div>
 
         <div class="right border">
-            <div class="nav right-inner bg-black2 border flex space-between">
-                <div class="arrows flex space-between">
-                    <button class="border-r50 bg-black btn-none">
-                        <img class="logo-5" src="needed/left-arrow.svg" alt="move left">
-                    </button>
-                    <button class="border-r50 bg-black btn-none">
-                        <img class="logo-5" src="needed/right-arrow.svg" alt="move-right">
-                    </button>
+            <div class="nav right-inner bg-black2 border flex space-between">   
+                <div class="flex">
+                    <div id="open_bar">
+                        <img class="logo" src="needed/hamburger.svg" alt="" onclick='displayLeft("show")'>
+                    </div>
+                    <div class="arrows flex space-between">
+                        <button class="border-r50 bg-black btn-none">
+                            <img class="logo-5" src="needed/left-arrow.svg" alt="move left">
+                        </button>
+                        <button class="border-r50 bg-black btn-none">
+                            <img class="logo-5" src="needed/right-arrow.svg" alt="move-right">
+                        </button>
+                    </div>
                 </div>
                 <div class="loginReg flex space-between">
                     <a class="bg-none center a-link signup" href="#">
