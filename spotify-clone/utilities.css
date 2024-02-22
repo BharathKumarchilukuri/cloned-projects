@@ -219,3 +219,9 @@
   border: none;
   cursor: pointer;
 }
+
+@media (max-height: 1200px){
+  .list{
+    padding: 8px 0;
+  }
+}

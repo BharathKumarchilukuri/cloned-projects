@@ -52,7 +52,7 @@ function displayLeft(command){
     if (command == "show") {
         left.style.left = "0px";
     } else if (command == "close") {
-        left.style.left = "-350px";
+        left.style.left = "-450px";
     }
 
 
