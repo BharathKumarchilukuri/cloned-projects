@@ -19,14 +19,9 @@
   padding: 12px 0;
 }
 
-.t-div {
-  margin: auto;
-  justify-content: center;
-}
-
-.w-33 {
+/* .w-33 {
   width: calc(100% / 3);
-}
+} */
 
 .top {
   position: relative;
@@ -220,7 +215,11 @@
   cursor: pointer;
 }
 
-@media (max-height: 1200px){
+.sc_btn {
+  width: 20px;
+}
+
+@media (max-width: 1200px){
   .list{
     padding: 8px 0;
   }

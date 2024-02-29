@@ -47,15 +47,31 @@ class Song {
 
 //@media (max-width: 1200px)
 
-function displayLeft(command){
+function displayLeft(command) {
     let left = document.getElementsByClassName("left")[0];
     if (command == "show") {
         left.style.left = "0px";
     } else if (command == "close") {
         left.style.left = "-450px";
     }
+}
 
+function openPlaybar() {
+    let playbar = document.getElementsByClassName("playbar")[0];
+    let d = playbar.style.display;
+    if (currentSong == null) {
+        d = "none";
+    } else {
+        d = "block";
+    }
+    playbar.style.display = d;
+}
 
+function submit_volume(value) {
+    if (currentSong != null) {
+        console.log(currentSong.volume);
+        currentSong.volume = value / 100;
+    }
 }
 
 var playing = false;
@@ -67,18 +83,19 @@ var SongTime = 0;
 let circle_left = document.getElementById("circle");
 function displayCircle() {
     circle_left.style.left = `${Math.round((Math.round(currentTime * 100) / SongTime) * 100) / 100}%`;
-    console.log(`${Math.round((Math.round(currentTime * 100) / SongTime) * 100) / 100}%`);
+    // console.log(`${Math.round((Math.round(currentTime * 100) / SongTime) * 100) / 100}%`);
     currentTime += 0.5;
 }
 
 function playSong(song) {
-    if(song.id == currentSong) return;
+    if (song.id == currentSong) return;
     if (playing) {
         play_pause();
         currentTime = 0;
     }
-    
+
     currentSong = song.id;
+    openPlaybar();
     playing = false;
     currentTime = 0;
     play_pause();
@@ -91,7 +108,6 @@ function play_pause() {
     if (playing) {
         currentSong.pause();
         clearInterval(songInterval);
-        console.log("Interval cleared");
         play.src = "needed/play-big.svg";
     } else {
         currentSong.play();
@@ -122,8 +138,8 @@ function displayOnPlaybar(song) {
 
     song_cover.src = song.cover;
     song_cover.alt = song.id;
-    song_title.innerHTML = song.title;
-    song_desc.innerHTML = song.description;
+    song_title.innerText = song.title;
+    song_desc.innerText = song.description;
 }
 
 function addSongs_CardContainer(songs) {
@@ -138,6 +154,9 @@ function addSongs_CardContainer(songs) {
         let div = document.createElement("div");
         div.classList.add("card");
         div.classList.add("border");
+
+        let div2 = document.createElement("div");
+        div2.classList.add("card-top");
 
         let playbutton = document.createElement("button");
         playbutton.classList.add("button");
@@ -159,11 +178,12 @@ function addSongs_CardContainer(songs) {
         cover.src = neworigin + "needed/covers/" + song_index + ".jpg";
         cover.alt = "cover";
 
-        let card_heading = document.createElement("h4");
+        let card_heading = document.createElement("h5");
         card_heading.classList.add("card-heading");
+        card_heading.style.fontSize = "14px";
         card_heading.innerText = "Todays Top Hits_" + song_index;
 
-        let card_body = document.createElement("h4");
+        let card_body = document.createElement("h6");
         card_body.classList.add("card-body");
         card_body.innerText = "Top of hottest 50_" + song_index;
 
@@ -183,9 +203,10 @@ function addSongs_CardContainer(songs) {
 
         all_songs.push(new_song);
 
-        div.appendChild(playbutton);
-        div.appendChild(logo_img);
-        div.appendChild(cover);
+        div2.appendChild(playbutton);
+        div2.appendChild(logo_img);
+        div2.appendChild(cover);
+        div.appendChild(div2);
         div.appendChild(card_heading);
         div.appendChild(card_body);
 
@@ -263,6 +284,29 @@ async function main() {
     all_Songs = addSongs_CardContainer(songs);
     // add songs to library
     addSongs_Library(all_Songs);
+    openPlaybar();
+    document.getElementById("volume_img").addEventListener("mouseover", () => {
+        let volume_range = document.getElementById("div_range");
+        volume_range.style.display = "flex";
+    });
+
+    let seekbar = document.getElementById("seekbar");
+    seekbar.addEventListener("click", () => {
+
+    });
+
+    let clicked_btns2 = false;
+    let mob_options = document.getElementById("mob_options");
+    mob_options.addEventListener("click", () => {
+        let btn2 = document.getElementsByClassName("ctrl-btns2")[0];
+        if (clicked_btns2) {
+            btn2.style.right = "180%";
+        } else {
+            btn2.style.right = "3%";
+        }
+
+        clicked_btns2 = !(clicked_btns2);
+    })
 }
 
 main();

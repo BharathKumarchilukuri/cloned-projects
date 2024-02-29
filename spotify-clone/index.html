@@ -1,154 +1,269 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spotify</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="utilities.css">
-</head>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="utilities.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container flex">
-        
-        <div class="left border">
-            <div class="home bg-grey border">
-                <div id="close_bar">
-                    <img class="logo" src="needed/close.svg" alt="close menu" onclick='displayLeft("close")'>
-                </div>
-                <div class="top cursor-pointer">
-                    <img class="logo" src="needed/logo.png" alt="Spotify">
-                    <span class="center">Spotify<img class="reg-logo logo" src="needed/registered.svg" alt="registered">
-                    </span>
-                </div>
-                <ul style="padding-inline-start: 0px;">
-                    <li class="list flex cursor-pointer">
-                        <a class="center a-link" href="#">
-                            <img class="logo ilogo" src="needed/home.svg"alt="Home">
-                            <span class="center f-24">Home</span>
-                        </a>
-                    </li>
-                    <li class="list flex cursor-pointer">
-                        <a class="center a-link" href="#">
-                            <img class="logo ilogo" src="needed/search.svg" alt="Search">
-                            <span class="center f-24">Search</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="library bg-grey border">
-                <div class="lib-header flex space-between">
-                    <div class="flex space-between">
-                        <button class="flex a-link bg-none">
-                            <img class="logo pright-12" src="needed/library.svg" alt="Your Library">
-                            <span class="center f-16">Your Library</span>
-                        </button>
-                    </div>
-                    <div class="center add">
-                        <button class="border-r50 bg-none">
-                            <img src="needed/add.svg" alt="add new Library" class="logo add-logo">
-                        </button>
-                    </div>
-                </div>
-                <div class="lib-body">
-                    <ul id="song-list">
-
-                    </ul>
-                </div>
-                <div class="lib-footer flex-v space-between flex-start">
-                    <a class="cookies a-link">Cookies</a>
-                    <button class="border-20 flex space-around bg-none center button-black">
-                        <img src="needed/globe.svg" alt="globe" class="logo center">
-                        <span class="f-16 center">English</span>
-                    </button>
-                </div>
-            </div>
+      <div class="left border">
+        <div class="home bg-grey border">
+          <div id="close_bar">
+            <img
+              class="logo"
+              src="needed/close.svg"
+              alt="close menu"
+              onclick='displayLeft("close")'
+            />
+          </div>
+          <div class="top cursor-pointer">
+            <img class="logo" src="needed/logo.png" alt="Spotify" />
+            <span class="center"
+              >Spotify<img
+                class="reg-logo logo"
+                src="needed/registered.svg"
+                alt="registered"
+              />
+            </span>
+          </div>
+          <ul style="padding-inline-start: 0px">
+            <li class="list flex cursor-pointer">
+              <a class="center a-link" href="#">
+                <img class="logo ilogo" src="needed/home.svg" alt="Home" />
+                <span class="center f-24">Home</span>
+              </a>
+            </li>
+            <li class="list flex cursor-pointer">
+              <a class="center a-link" href="#">
+                <img class="logo ilogo" src="needed/search.svg" alt="Search" />
+                <span class="center f-24">Search</span>
+              </a>
+            </li>
+          </ul>
         </div>
-
-        <div class="right border">
-            <div class="nav right-inner bg-black2 border flex space-between">   
-                <div class="flex">
-                    <div id="open_bar">
-                        <img class="logo" src="needed/hamburger.svg" alt="" onclick='displayLeft("show")'>
-                    </div>
-                    <div class="arrows flex space-between">
-                        <button class="border-r50 bg-black btn-none">
-                            <img class="logo-5" src="needed/left-arrow.svg" alt="move left">
-                        </button>
-                        <button class="border-r50 bg-black btn-none">
-                            <img class="logo-5" src="needed/right-arrow.svg" alt="move-right">
-                        </button>
-                    </div>
-                </div>
-                <div class="loginReg flex space-between">
-                    <a class="bg-none center a-link signup" href="#">
-                        <span class="center-v f-24">Sign up</span>
-                    </a>
-
-                    <button class="login border-25 cursor-pointer button-white">
-                        Log in
-                    </button>
-                </div>
+        <div class="library bg-grey border">
+          <div class="lib-header flex space-between">
+            <div class="flex space-between">
+              <button class="flex a-link bg-none">
+                <img
+                  class="logo pright-12"
+                  src="needed/library.svg"
+                  alt="Your Library"
+                />
+                <span class="center f-16">Your Library</span>
+              </button>
             </div>
-            <div class="content bg-grey">
-                <header class="main-header flex space-between">
-                    <span>
-                        <a href="#" class="playlist text-decunderline">Spotify Playlists</a>
-                    </span>
-                    <span>
-                        <a href="#" class="a-link text-decunderline showall">Show all</a>
-                    </span>
-                </header>
-                
-                <div id="card-container" class="flex">
-
-                </div>
-                <div class="playbar song-control">
-                    <div class="flex" style="height: 90%;">
-                        <div class="flex w-33 song-detail">
-                            <div class="song-cover">
-                                <img id="song-cover-img" src="" alt="">
-                            </div>
-                            <div class="song-data">
-                                <h4 class="song-title">
-                                </h4>
-                                <h6 class="song-desc">        
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="w-33 t-div flex">
-                            <div class="playbar-btns flex">
-                                <img id="previous_song" src="needed/previous.svg" alt="previous" class=" logo cursor-pointer play-small" onclick='clicked("previous_song")'>
-                                <img id="play_song" class="logo play-big cursor-pointer" src="needed/play-big.svg" alt="play" onclick='clicked("play_song")'>
-                                <img id="next_song" src="needed/next.svg" alt="next" class="logo cursor-pointer play-small" onclick='clicked("next_song")'>
-                            </div>
-                        </div>
-                        <div class="w-33 t-div flex">
-                            <div class="ctrl-btns flex">
-                                <img class="logo" src="needed/add.svg" alt="" class="repeat">
-                                <img class="logo" src="needed/add.svg" alt="" class="repeat">
-                                <img class="logo" src="needed/add.svg" alt="" class="repeat">
-                                <img class="logo" src="needed/add.svg" alt="" class="repeat">
-                                <span class="center-v">
-                                    <!-- <img id="volume_img" class="logo" src="needed/volume/half.svg" alt="volume"> -->
-                                    <input type="range" name="volume" onchange="submit_volume(this.value)">
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="seekbar">
-                        <div id="circle">
-
-                        </div>
-                    </div>  
-                </div>
+            <div class="center add">
+              <button class="border-r50 bg-none">
+                <img
+                  src="needed/add.svg"
+                  alt="add new Library"
+                  class="logo add-logo"
+                />
+              </button>
             </div>
-            
+          </div>
+          <div class="lib-body">
+            <ul id="song-list"></ul>
+          </div>
+          <div class="lib-footer flex-v space-between flex-start">
+            <a class="cookies a-link">Cookies</a>
+            <button
+              class="border-20 flex space-around bg-none center button-black"
+            >
+              <img src="needed/globe.svg" alt="globe" class="logo center" />
+              <span class="f-16 center">English</span>
+            </button>
+          </div>
         </div>
+      </div>
+
+      <div class="right border">
+        <div class="nav right-inner bg-black2 border flex space-between">
+          <div class="flex">
+            <div id="open_bar">
+              <img
+                class="logo"
+                src="needed/hamburger.svg"
+                alt=""
+                onclick='displayLeft("show")'
+              />
+            </div>
+            <div class="arrows flex space-between">
+              <button class="border-r50 bg-black btn-none">
+                <img
+                  class="logo-5"
+                  src="needed/left-arrow.svg"
+                  alt="move left"
+                />
+              </button>
+              <button class="border-r50 bg-black btn-none">
+                <img
+                  class="logo-5"
+                  src="needed/right-arrow.svg"
+                  alt="move-right"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="loginReg flex space-between">
+            <a class="bg-none center a-link signup" href="#">
+              <span class="center-v f-24">Sign up</span>
+            </a>
+
+            <button class="login border-25 cursor-pointer button-white">
+              Log in
+            </button>
+          </div>
+        </div>
+        <div class="content bg-grey">
+          <header class="main-header flex space-between">
+            <span>
+              <a href="#" class="playlist text-decunderline"
+                >Spotify Playlists</a
+              >
+            </span>
+            <span>
+              <a href="#" class="a-link text-decunderline showall">Show all</a>
+            </span>
+          </header>
+
+          <div id="card-container"></div>
+          <div class="playbar song-control space-around">
+            <div class="flex" style="height: 90%; column-gap: 8px">
+              <div class="song-cover">
+                <img id="song-cover-img" src="" alt="" />
+              </div>
+              <div class="ctrl">
+                <div class="flex space-between">
+                  <div class="flex song-detail">
+                    <div class="song-data">
+                      <p class="song-title">Hello</p>
+                      <p class="song-desc">Hello</p>
+                    </div>
+                  </div>
+                  <div class="center flex">
+                    <div class="playbar-btns flex">
+                      <img
+                        id="previous_song"
+                        src="needed/previous.svg"
+                        alt="previous"
+                        class="logo cursor-pointer play-small"
+                        onclick='clicked("previous_song")'
+                      />
+                      <img
+                        id="play_song"
+                        class="logo play-big cursor-pointer"
+                        src="needed/play-big.svg"
+                        alt="play"
+                        onclick='clicked("play_song")'
+                      />
+                      <img
+                        id="next_song"
+                        src="needed/next.svg"
+                        alt="next"
+                        class="logo cursor-pointer play-small"
+                        onclick='clicked("next_song")'
+                      />
+                    </div>
+                  </div>
+                  <div class="center flex">
+                    <div class="ctrl-btns">
+                      <img
+                        class="sc_btn logo"
+                        src="needed/add.svg"
+                        alt=""
+                        class="repeat"
+                      />
+                      <img
+                        class="sc_btn logo"
+                        src="needed/add.svg"
+                        alt=""
+                        class="repeat"
+                      />
+                      <img
+                        class="sc_btn logo"
+                        src="needed/add.svg"
+                        alt=""
+                        class="repeat"
+                      />
+                      <img
+                        class="sc_btn logo"
+                        src="needed/add.svg"
+                        alt=""
+                        class="repeat"
+                      />
+                    </div>
+
+                    <span class="center-v">
+                      <img
+                        id="volume_img"
+                        class="sc_btn logo"
+                        src="needed/volume/v-75.svg"
+                        alt="volume"
+                      />
+                      <div id="div_range">
+                        <input
+                          id="volume_range"
+                          type="range"
+                          name="volume"
+                          onchange="submit_volume(this.value)"
+                        />
+                      </div>
+                    </span>
+
+                    <div class="mob_ctrls">
+                      <img
+                        id="mob_options"
+                        src="needed/options.svg"
+                        alt="Options"
+                        class="logo"
+                      />
+                    </div>
+                    <div class="ctrl-btns2 space-between">
+                      <img
+                        class="logo"
+                        src="needed/add.svg"
+                        alt=""
+                        class="repeat"
+                      />
+                      <img
+                        class="logo"
+                        src="needed/add.svg"
+                        alt=""
+                        class="repeat"
+                      />
+                      <img
+                        class="logo"
+                        src="needed/add.svg"
+                        alt=""
+                        class="repeat"
+                      />
+                      <img
+                        class="logo"
+                        src="needed/add.svg"
+                        alt=""
+                        class="repeat"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="seekbar_div">
+              <div id="seekbar">
+                <div id="circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>

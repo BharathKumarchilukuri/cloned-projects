@@ -14,7 +14,7 @@ body {
   font-weight: lighter;
 }
 
-.container{
+.container {
   margin: 8px;
 }
 
@@ -22,8 +22,6 @@ body {
   width: 24vw;
   height: 100%;
   margin-right: 4px;
-  display: grid;
-  grid-template-rows: 3fr 9.375fr;
 }
 
 .right {
@@ -39,9 +37,8 @@ body {
 }
 
 .library {
-  display: grid;
-  grid-template-rows: 0.25fr auto 1fr;
   position: relative;
+  height: 73.7vh;
 }
 
 /* .right-inner {
@@ -90,12 +87,11 @@ body {
 }
 
 .lib-body {
-  height: 300px;
+  height: 46vh;
   background-color: transparent;
   margin: 1px;
   overflow-y: scroll;
   overflow-x: hidden;
-  z-index: 2;
 }
 
 .lib-body::-webkit-scrollbar {
@@ -126,10 +122,10 @@ body {
   position: absolute;
   bottom: 0;
   width: 95.6%;
-  height: 140px;
+  height: 25%;
   padding: 4px 0 0 16px;
   border-radius: inherit;
-  background-color: transparent;
+  background-color: inherit;
 }
 
 .cookies {
@@ -164,7 +160,7 @@ body {
 .content {
   height: 85.5vh;
   border-radius: 0 0 8px 8px;
-  padding: 6px 22px 12px;
+  padding: 6px 15px 12px;
   position: relative;
 }
 
@@ -176,24 +172,50 @@ body {
   margin: 0px 0px 4px;
 }
 
+#div_range{
+  background-color: rgb(186, 107, 107, 0.3);
+  width: 10px;
+  height: 150px;
+  position: absolute;
+  bottom: 60px;
+  right: 14px;
+  display: none;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+input[type="range"]{
+  height: 100%;
+  width: 2px;
+  margin: auto;
+  align-self: center;
+  writing-mode: vertical-lr;
+}
+
 .showall {
   padding: 4px;
   font-size: 14px;
 }
 
 #card-container {
+  display: flex;
   flex-wrap: wrap;
-  gap: 0.75vw;
+  row-gap: 1vw;
+  column-gap: 1vw;
   overflow-y: scroll;
   max-height: 70vh;
-  padding: 0px 12px 12px;
+  padding-right: 1vw;
+}
+
+.card:last-child{
+  margin-left: auto;
 }
 
 .card {
   background-color: rgb(36, 27, 27);
-  height: 250px;
-  width: 172px;
-  position: relative;
+  flex: 1 1 150px;
+  min-height: 250px;
+  height: auto;
   padding: 16px;
   transition: 0.5s;
 }
@@ -203,26 +225,29 @@ body {
   background-color: rgb(57, 42, 42);
 }
 
+.card-top{
+  position: relative;
+}
+
 .cover {
   margin: 0;
   width: 100%;
-  object-fit: contain;
-  margin-bottom: 4px;
+  object-fit: cover;
 }
 
-.card .logo-img {
+.card-top .logo-img {
   position: absolute;
-  top: 24px;
-  left: 24px;
+  top: 6%;
+  left: 6%;
   width: 16px;
 }
 
-.card-heading {
+.card-heading, .card-body {
   padding: 4px;
 }
 
 .card:hover .button {
-  top: 46%;
+  bottom: 7%;
   opacity: 1;
 }
 
@@ -231,8 +256,8 @@ body {
   height: 50px;
   border: none;
   position: absolute;
-  top: 50%;
-  left: 65%;
+  bottom: 0;
+  right: 5%;
   opacity: 0;
   color: transparent;
   transition: all 0.25s ease-out;
@@ -245,9 +270,10 @@ body {
   position: absolute;
   bottom: 0px;
   background-color: inherit;
-  padding: 8px;
-  width: 72vw;
-  height: 8vh;
+  padding: 6px;
+  width: 95%;
+  height: 10vh;
+  z-index: 3;
 }
 
 .play-big {
@@ -281,31 +307,100 @@ body {
 .song-detail {
   gap: 1vw;
   height: 100%;
+  overflow: hidden;
+  width: 10vw;
+}
+
+.song-cover {
+  display: flex;
+  height: 100%;
 }
 
 #song-cover-img {
   width: 54px;
-  height: 100%;
-  object-fit: contain;
+  height: 80%;
+  margin: auto 0;
+  object-fit: cover;
 }
 
-.ctrl-btns {
+.ctrl {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+}
+
+.ctrl-btns{
+  display: flex;
+  margin-right: 4px;
+}
+ 
+.ctrl-btns, .ctrl-btns2 {
   justify-content: center;
   gap: 12px;
 }
 
+#mob_options{
+  display: none;
+  position: relative;
+}
+
+.ctrl-btns2{
+  display: none;
+  position: absolute;
+  right: 105%;
+  top: -30px;
+  transition: all 1.0s ease-out;
+  background-color: burlywood;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.ctrl-btns2 img {
+  background-color: bisque;
+  border-radius: 50%;
+  padding: 4px;
+}
+
 .song-data {
   margin: auto 0;
+  width: 100%;
+}
+
+.song-title{
+  font-size: 16px;
+  animation: song_scroll 6s linear infinite;
+}
+
+.song-desc{
+  font-size: 12px;
+  animation: song_scroll 8s linear 0.5s infinite;
+}
+
+@keyframes song_scroll{
+  0% { left: 100%;}
+  100% { left: -110%;}
+}
+
+.song-title, .song-desc{
+  position: relative;
+  width: 1000%;
+}
+
+#seekbar_div{
+  padding: 4px 0;
+  cursor: pointer;
 }
 
 #seekbar {
-  width: 97%;
+  width: 100%;
   height: 0;
-  position: absolute;
-  bottom: 4px;
   border: 1px solid whitesmoke;
   border-radius: 2px;
   z-index: 1;
+  margin: 0 0 4px;
 }
 
 #circle {
@@ -316,14 +411,15 @@ body {
   left: -2px;
   bottom: 5px;
   border-radius: 50%;
-  transition: left 0.5s ease-in-out;
+  transition: left 0.2s ease-in-out;
+  cursor:pointer;
 }
 
 @media (max-width: 1200px) {
   .left {
     position: absolute;
     width: 350px;
-    height: 100vh;
+    height: 100%;
     margin: 0px;
     left: -450px;
     top: 0;
@@ -336,32 +432,31 @@ body {
   .right {
     position: absolute;
     width: 100%;
+    margin: 0px;
   }
 
-  .home{
+  .home {
     position: relative;
     padding: 10px 12px 8px 12px;
   }
 
-  .library{
+  .library {
     margin: 0;
-    grid-template-rows: 0.25fr auto 0.6fr;
   }
 
-  .lib-header{
+  .lib-header {
     height: 20px;
     z-index: 3;
   }
 
-  .lib-body{
+  .lib-body {
     z-index: 2;
     height: 275px;
   }
 
-  .lib-footer{
+  .lib-footer {
     background-color: inherit;
-    height: 115px;
-    padding: 4px 0 0 12px;
+    padding: 4px 0 0 8px;
     z-index: 3;
   }
 
@@ -370,7 +465,8 @@ body {
     opacity: 0.75;
   }
 
-  #open_bar .logo, #close_bar .logo {
+  #open_bar .logo,
+  #close_bar .logo {
     width: 100%;
   }
 
@@ -392,17 +488,57 @@ body {
     background-color: transparent;
   }
 
-  #close_bar .logo{
+  #close_bar .logo {
     width: 20px;
     height: 20px;
   }
 
-  #close_bar .logo:hover{
+  #close_bar .logo:hover {
     background-color: grey;
   }
 
-  .reg-logo{
+  .reg-logo {
     width: 4px;
     height: 4px;
+  }
+
+  .song-detail{
+    width: 20vw;
+  }
+}
+
+@media (max-width : 600px) {
+  #mob_options{
+    display: flex;
+  }
+
+  .ctrl-btns{
+    display: none;
+  }
+
+  .ctrl-btns2{
+    display: flex;
+  }
+
+  #song-cover-img{
+    width: 40px;
+  }
+
+  .playbar{
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  }
+
+  .song-detail{
+    width: 20vw;
+  }
+
+  .song-title{
+    font-size: 12px;
+  }
+  
+  .song-desc{
+    font-size: 8px;
   }
 }
